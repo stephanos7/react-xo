@@ -2,14 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Square extends React.Component {
-  render() {
+function Square(props) {
     return (
-      <button className="square" onClick={() => this.props.whenClick()}>
-        {this.props.value}
+      <button className="square" onClick={() => props.whenClicked()}>
+        {props.value}
       </button>
     );
-  }
 }
 
 class Board extends React.Component {
@@ -23,9 +21,18 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
     <Square value={this.state.squares[i]} 
-                   whenClick={ () => console.log("parent: it has been clicked so i will take it from here")} />
+            whenClicked={() => this.handleClick(i)} />
     )
   }
+
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    console.log("before assign",squares);
+    squares[i] = "X";
+    console.log("after assign",squares);
+    this.setState({squares: squares});
+  }
+
   render() {
     const status = 'Next player: X';
 
