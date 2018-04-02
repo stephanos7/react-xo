@@ -33,8 +33,8 @@ class Board extends React.Component {
 
     return (
       <div>
-        <div className="status">{status}</div>
-        <div style={styles.root}>
+        <div>{status}</div>
+        <div style={styles.board}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}

@@ -1,7 +1,5 @@
-import configStyles from "./config-styles";
-
 export default {
-  root: {
+  board: {
     width: 500,
     height: 500,
     display:"grid",

@@ -5,8 +5,8 @@ import styles from "../styles/Square-styles";
 
 function Square(props) {
     return (
-      <div className="square" style={styles.root} onClick={props.whenClicked}>
-        {props.value}
+      <div style={styles.root} onClick={props.whenClicked}>
+        <span style={styles.symbol}>{props.value}</span>
       </div>
     );
 }
