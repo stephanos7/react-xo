@@ -1,3 +1,4 @@
+import Radium from "radium";
 import React from "react";
 
 import styles from "../styles/Square-styles";
@@ -10,4 +11,4 @@ function Square(props) {
     );
 }
 
-export default Square;
+export default Radium(Square);
